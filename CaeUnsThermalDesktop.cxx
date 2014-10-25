@@ -20,7 +20,7 @@
 #include "CaeUnsThermalDesktop.h"
 
 
-const char *attrWideFormat = "wideFormat";
+const char *attrWideFormat = "WideFormat";
 const char *attrShellThickness = "ShellThickness";
 const char *attrShellOrientation = "ShellOrientation";
 enum {
