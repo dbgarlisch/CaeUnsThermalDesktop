@@ -3,6 +3,19 @@ An Pointwise CAE plugin that exports a ThermalDesktop grid.
 
 ![ThermalDesktop][Logo]
 
+## Solver Attributes
+
+### WideFormat
+
+Set `true` to export using wide column format. Type `Boolean`. Default `true`.
+
+### ShellThickness
+
+The default PSHELL thickness. Type `Real`. Default `0.0`.
+
+### ShellOrientation
+
+The default PSHELL orientation. Type `enum(NormalsOut|NormalsIn)`. Default `NormalsOut`.
 
 ## Limitations
 
