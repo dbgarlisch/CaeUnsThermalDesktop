@@ -17,14 +17,16 @@
 #include "CaePlugin.h"
 #include "CaeUnsGridModel.h"
 
+#include <map>
+
 
 //***************************************************************************
 //***************************************************************************
 //***************************************************************************
 
-class CaeUnsThermalDesktop :
-    public CaeUnsPlugin,
-    public CaeFaceStreamHandler {
+class CaeUnsThermalDesktop : public CaeUnsPlugin, public CaeFaceStreamHandler {
+
+    typedef std::map<const char*, int> MatMap;
 
 public:
     CaeUnsThermalDesktop(CAEP_RTITEM *pRti, PWGM_HGRIDMODEL model,
@@ -39,17 +41,21 @@ private:
     virtual PWP_BOOL    write();
     virtual bool        endExport();
 
-    bool    writeHeader();
-    bool    writeVertices();
-    bool    writeElements();
-    bool    writeElement(const CaeUnsElement &elem, int id, int grp);
-    bool    writeElemSet(const char *name, int setId, int fromElemId,
-                int toElemId);
+    bool        writeHeader();
+    bool        writeVertices();
+    bool        writeElements();
+    bool        writeElement(const PWGM_ELEMDATA &data, int id, int mat);
+    inline bool writeElement(const CaeUnsElement &elem, int id, int mat) {
+                    PWGM_ELEMDATA data;
+                    return elem.data(data) && writeElement(data, id, mat);
+                }
+    bool        writeElemSet(const char *name, int setId, int fromElemId,
+                    int toElemId);
 
-    void    writeComment(const char *pfx, const char *text, const char *sfx);
-    void    writeComment(const char *pfx, const char *text);
-    void    writeComment(const char *text);
-    void    writeSectionComment(const char *text);
+    void        writeComment(const char *pfx, const char *text, const char *sfx);
+    void        writeComment(const char *pfx, const char *text);
+    void        writeComment(const char *text);
+    void        writeSectionComment(const char *text);
 
     // face streaming handlers
     virtual PWP_UINT32 streamBegin(const PWGM_BEGINSTREAM_DATA &data);
@@ -62,7 +68,7 @@ private:
     bool            wideFormat_;
     PWP_REAL        defThickness_;
     PWP_UINT32      defOrient_;
-    const char *    header_;
+    const char *    fmtMat1_;
     const char *    fmtSolid_;
     const char *    fmtShell_;
     const char *    fmtGrid_;
@@ -73,6 +79,7 @@ private:
     const char *    fmtPri_;
     const char *    fmtHex_;
     PWP_UINT32      totalElemCnt_;
+    MatMap          matMap_;
 };
 
 #endif // _CAEUNSTHERMALDESKTOP_H_

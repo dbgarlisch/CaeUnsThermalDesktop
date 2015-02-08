@@ -14,15 +14,15 @@
 /*------------------------------------*/
 /* CaeUnsThermalDesktop format item setup data */
 /*------------------------------------*/
-CAEP_BCINFO CaeUnsThermalDesktopBCInfo[] = {
-    { "patch", 100 },
-    { "wall", 101 },
-};
-/*------------------------------------*/
-CAEP_VCINFO CaeUnsThermalDesktopVCInfo[] = {
-    { "viscous-CaeUnsThermalDesktop", 200 },
-    { "invisid-CaeUnsThermalDesktop", 201 },
-};
+//CAEP_BCINFO CaeUnsThermalDesktopBCInfo[] = {
+//    { "patch", 100 },
+//    { "wall", 101 },
+//};
+///*------------------------------------*/
+//CAEP_VCINFO CaeUnsThermalDesktopVCInfo[] = {
+//    { "viscous-CaeUnsThermalDesktop", 200 },
+//    { "invisid-CaeUnsThermalDesktop", 201 },
+//};
 /*------------------------------------*/
 const char *CaeUnsThermalDesktopFileExt[] = {
     "nas"

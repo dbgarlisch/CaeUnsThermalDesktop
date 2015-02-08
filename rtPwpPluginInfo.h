@@ -20,7 +20,7 @@
     VERSION_LIB_INIT,         // software library release version
     "Pointwise, Inc.",        // company/author description
     "support.pointwise.com",  // support description (phone, web-link).
-    "Copyright (c) 2008-2014", // copyright description
+    "Copyright (c) 2008-2015", // copyright description
     0,                        // number of APIs (auto-set at runtime)
     0,                        // default msg callback (auto-set at runtime)
     0,                        // spy msg callback (auto-set at runtime)

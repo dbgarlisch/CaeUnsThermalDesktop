@@ -15,7 +15,7 @@
 /*.................................................
     initialize caepRtItem[0]
 */
-#define ID_CaeUnsThermalDesktop  40
+#define ID_CaeUnsThermalDesktop  290
 {
     /*== CAEP_FORMATINFO FormatInfo */
     {   PWP_SITE_GROUPNAME,     /* const char *group */
