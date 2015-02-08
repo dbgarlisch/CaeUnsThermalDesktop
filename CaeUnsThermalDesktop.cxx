@@ -25,16 +25,10 @@ https://simcompanion.mscsoftware.com/infocenter/index?page=content&id=DOC10654&c
 #include "CaeUnsThermalDesktop.h"
 
 
-<<<<<<< HEAD
 static const PWP_UINT32 UnspecifiedId = 2147483647;
 static const char *attrWideFormat = "WideFormat";
 static const char *attrShellThickness = "ShellThickness";
 static const char *attrShellOrientation = "ShellOrientation";
-=======
-const char *attrWideFormat = "WideFormat";
-const char *attrShellThickness = "ShellThickness";
-const char *attrShellOrientation = "ShellOrientation";
->>>>>>> origin/master
 enum {
     NormalsOut,
     NormalsIn
@@ -62,7 +56,8 @@ CaeUnsThermalDesktop::CaeUnsThermalDesktop(CAEP_RTITEM *pRti, PWGM_HGRIDMODEL
     fmtPyr_(0),
     fmtPri_(0),
     fmtHex_(0),
-    totalElemCnt_(0)
+    totalElemCnt_(0),
+    matMap_()
 {
 }
 
